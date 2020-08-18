@@ -4,6 +4,7 @@
   font-family: Arial, Helvetica, sans-serif;
   line-height: 1.5em;
   list-style: none;
+  box-sizing: border-box;
   text-decoration: none;
 }
 #site_wrap{
@@ -11,13 +12,13 @@
   display: grid;
   grid-template-columns: 
     1fr
-    repeat(4,minmax(0,272))
+    repeat(4,minmax(0,272px))
     1fr
   ; 
   grid-template-rows:
     104px
     215px
-    373px
+    min-content
     373px
     1fr
   ;
@@ -68,14 +69,35 @@
 .header .menu a:hover{
   background-color: #F2AB9B;
   color: white;
-}
+} 
+
+/* Featured-Header */
 .featured_header{
-  background-color: blue;
+  background-image: url("image/8ee2ec101027737.5f15dfdc51fb9.png");
   grid-area: featured_header;
+  background-size: cover;
 }
+
+/* Main */
 .featured_main{
-  background-color: orange;
+  margin: 10px;
   grid-area: featured_main;
+  
+}
+.featured_main h1,p{
+  color: #707070;
+}
+.featured_main .btn{
+  margin: 8px 8px 0px 0px;
+  padding: 12px 24px;
+  background-color: #5A8C87;
+  border: 2px solid #5A8C87;
+  color: white;
+  border-radius: 45px;
+  font-weight: bold;
+  transition: .3s ease-in-out;
+  display: inline-block;
+  float: right;
 }
 .featured_profile{
   background-color: pink;
